@@ -13,6 +13,19 @@ ui <- fluidPage(
     .title-section h1, .title-section h2, .title-section h3, .title-section h4 {
       margin: 0;
     }
+    .header-columns {
+      display: flex;
+      justify-content: space-between;
+    }
+    .header-left {
+      flex: 10;
+    }
+    .header-right {
+      flex: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .columns-section {
       display: flex;
       justify-content: space-between;
@@ -74,9 +87,11 @@ ui <- fluidPage(
   ")),
 
   div(class = "title-section",
+      div(class = "header-columns",
+          div(class = "header-left",
               div(class = "header-line-before"), # Thicker white line before main title
               h2("Statistical Technique Advisor", align = "center", style = "font-weight: bold;"),
-              h3("(sta.v3)", align = "center", style = "font-weight: bold;"),
+              h3("(STA 3.0)", align = "center", style = "font-weight: bold;"),
               br(),
               p("\u00A9 August 2024, designed and coded by Ergul Demir", class = "copyright"),
               p(a(href = "https://orcid.org/0000-0002-3708-8013", "ORCID: 0000-0002-3708-8013", class = "orcid"), class = "orcid"),
@@ -85,6 +100,11 @@ ui <- fluidPage(
               p(em("This application aims to support you in finding the appropriate statistical technique depending on 
                    your analysis purpose and the characteristics of your data. You can receive recommendations and brief explanations 
                    after completing the module selection and follow-up questions below."))
+          ),
+          div(class = "header-right",
+              img(src = "STA_Logo.jpeg", style = "max-width: 100%; height: auto;")
+          )
+      )
   ),
 
   div(class = "columns-section",
